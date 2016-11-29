@@ -53,7 +53,7 @@ public class AppTest
 	 
 	 public void testCommandLine()
     {		
-		String[] TestArg = {"-f", "C:\\2Do\\README.txt"};
+		String[] TestArg = {"-f", "README.md"};
 		String TestSignature = "ParseCommandLine(" + Arrays.toString(TestArg) + ")";
 		
 		try {
@@ -69,7 +69,7 @@ public class AppTest
 	
     public void testRun()
     {		
-		String TestArg = "C:\\2Do\\README.txt";
+		String TestArg = "README.md";
 		String TestSignature = "Run(\"" + TestArg + "\")";
 		
 		try {
@@ -85,7 +85,7 @@ public class AppTest
 	
 	public void testReadFile()
     {		
-		String TestArg = "C:\\2Do\\README.txt";
+		String TestArg = "README.md";
 		String TestSignature = "readFile(\"" + TestArg + "\")";
 		
 		try {
@@ -104,7 +104,10 @@ public class AppTest
 		String TestSignature = "Hello() ";
 		String expected = "Hello from ReadFile.";
 		String actual = rf.Hello();
-  	    assertEquals(expected + " does not match " + actual, expected, actual);
+		if (actual.contains(expected))
+			 assertTrue( true );
+		else
+  	       fail(expected + " does not match " + actual);
 
 		System.out.println("Success " + TestSignature);
     }
