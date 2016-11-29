@@ -13,7 +13,9 @@ public class ReadFile {
 	 * A Hello method to make sure all is well
 	 */
 	public String Hello() {
-		return ("Hello from ReadFile.");
+		String ss = "Hello from ReadFile. Current directory : " + System.getProperty("user.dir");
+		System.out.println(ss);
+		return (ss);
 	}
 
 	/**
